@@ -1,5 +1,4 @@
 const express = require("express");
-// const http = require("http");
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -7,10 +6,9 @@ const MongoClient = require('mongodb').MongoClient;
 require("./user")
 const User = mongoose.model("user")
 
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-//
+
 mongoose.connect('mongodb+srv://admin:adminpw@cluster0.7r0lbkj.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -21,11 +19,6 @@ mongoose.connection.on("connected", () => {
 mongoose.connection.on("error", (err) => {
     console.log("error", err)
 })
-//https://www.youtube.com/watch?v=lXR3SCKAec4
-
-// app.get('/',  (req, res) => {
-//     res.send("hello");
-// });
 
 app.get('/', (req, res) => {
     console.log("Getting Users");
@@ -38,6 +31,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/createUser', (req, res) =>{
+    console.log("Creating user");
     const user = new User({
         name: req.body.name
     })
