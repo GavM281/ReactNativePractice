@@ -10,8 +10,7 @@ function Create({navigation}) {
     // Create User
     const submitData = () =>{
         console.log("Submitting data");
-        // fetch("http://192.168.2.135:3000/createUser", {
-        fetch("http://149.157.108.197:3000/createUser", {
+        fetch("http://192.168.2.135:3000/createUser", {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'

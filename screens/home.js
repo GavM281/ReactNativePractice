@@ -10,8 +10,7 @@ function Home({navigation}) {
 
     // Get data from Mongo
     const fetchData = () => {
-        // fetch("http://192.168.2.135:3000/")
-        fetch("http://149.157.108.197:3000/")
+        fetch("http://192.168.2.135:3000/")
             .then(res => res.json())
             .then(results => {
                 console.log("Results: ", results)
@@ -40,8 +39,7 @@ function Home({navigation}) {
 
     const deleteUser = (_id) =>{
         console.log("delete user with id: ", _id);
-        // fetch("http://192.168.2.135:3000/delete", {
-        fetch("http://149.157.108.197:3000/delete", {
+        fetch("http://192.168.2.135:3000/delete", {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
@@ -60,8 +58,7 @@ function Home({navigation}) {
 
     const updateUser = (_id) =>{
         console.log("Updating user");
-        // fetch("http://192.168.2.135:3000/update", {
-        fetch("http://149.157.108.197:3000/update", {
+        fetch("http://192.168.2.135:3000/update", {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
